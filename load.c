@@ -8,9 +8,7 @@ int LoadRun(const char * const s, int i, int *mas, int size)
     void * lib;
     int (*fun1)(int *mas, int size);
     int (*fun2)(int *matr, int size);
-#ifndef WIN32
-    lib = dlopen(s, RTLD_LAZY);
-#else
+
     lib = LoadLibrary(s);
 #endif
     if (!lib)
